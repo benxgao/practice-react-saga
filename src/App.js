@@ -7,17 +7,16 @@ import {
 } from 'react-router-dom';
 import { hot } from 'react-hot-loader';
 import history from './history';
-import HomePage from './views/HomePage';
+import Main from './views/Main';
 
-const Main = () => (
+const App = () => (
   <Router history={history}>
     <Switch>
-      <Route exact path={'/'} component={HomePage} />
+      <Route exact path={'/'} component={Main} />
       <Redirect to={'/'} />
     </Switch>
   </Router>
 );
 
-const App = hot(module)(Main);
+export default hot(module)(App);
 
-export default App;
