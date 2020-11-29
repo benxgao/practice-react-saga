@@ -2,18 +2,22 @@
 
 import { take, put, call, fork, select, takeEvery, all } from 'redux-saga/effects';
 import * as actions from '../actions';
-// import { getCart } from '../reducers';
 import { userApi } from '../services/users';
 
-export function* getAllUsers() {
-  const users = yield call(userApi.getUsers);
+export function* getUsers() {
+  const users = yield call(userApi.getAllUsers);
   yield put(actions.receiveUsers(users));
 };
 
 export function* watchGetUsers() {
-  yield takeEvery(actions.GET_ALL_USERS, getAllUsers);
+  while(true) {
+    yield takeEvery(actions.loadUserPage, getUsers);
+  }
 };
 
 export default function* root() {
-  yield all([fork(getAllUsers), fork(watchGetUsers)]);
+  yield all([
+    // fork(getUsers),
+    fork(watchGetUsers)
+  ]);
 };

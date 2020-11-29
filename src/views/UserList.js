@@ -1,18 +1,21 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import UserItem from './UserItem';
-
+import { loadUserPage } from '../actions';
 import { connect } from 'react-redux';
-import { getVisibleusers } from '../reducers/users';
 
 class UserList extends Component {
+  componentDidMount() {
+    this.props.loadUserPage();
+  }
+
   render() {
-    const { users } = this.props
+    const { users } = this.props;
 
     return (
       <div>
         <h3>users</h3>
-        {users.map(user => (
+        {users && users.length > 0 && users.map(user => (
           <UserItem key={user.id} {...{user}} />
         ))}
       </div>
@@ -20,14 +23,21 @@ class UserList extends Component {
   }
 }
 
-UserList.propTypes = {
-  users: PropTypes.arrayOf(
-    PropTypes.shape({
-      id: PropTypes.number.isRequired,
-    }),
-  ).isRequired,
+// UserList.propTypes = {
+//   users: PropTypes.arrayOf(
+//     PropTypes.shape({
+//       id: PropTypes.number.isRequired,
+//     }),
+//   ).isRequired,
+// }
+
+const mapStateToProps = state => {
+  return ({ users: state.users });
 }
 
 export default connect(
-  state => ({ users: getVisibleusers(state.users) }),
+  mapStateToProps,
+  {
+    loadUserPage
+  }
 )(UserList);

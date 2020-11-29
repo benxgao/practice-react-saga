@@ -13,7 +13,7 @@ export default class UserItem extends Component {
   }
 };
 
-userItem.propTypes = {
+UserItem.propTypes = {
   user: PropTypes.shape({
     id: PropTypes.string.isRequired,
   }).isRequired,
