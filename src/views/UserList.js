@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import R from 'ramda';
 import PropTypes from 'prop-types';
 import UserItem from './UserItem';
 import { loadUserPage } from '../actions';
@@ -11,13 +12,16 @@ class UserList extends Component {
 
   render() {
     const { users } = this.props;
-
+    console.log('users', users);
     return (
       <div>
         <h3>users</h3>
-        {users && users.length > 0 && users.map(user => (
-          <UserItem key={user.id} {...{user}} />
-        ))}
+        {users && users.foreach(user => {
+          console.log('user', user);
+          return (
+            <UserItem key={user.id} {...{user}} />
+          );
+        })}
       </div>
     )
   }

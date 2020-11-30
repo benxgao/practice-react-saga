@@ -1,3 +1,4 @@
+import 'babel-polyfill';
 import reset from 'reset-css'; // eslint-disable-line
 import React from 'react';
 import ReactDOM from 'react-dom';

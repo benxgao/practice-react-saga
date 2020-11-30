@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 export default class UserItem extends Component {
   render() {
     const { user } = this.props;
+    console.log('user', user);
 
     return (
       <div>
