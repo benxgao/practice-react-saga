@@ -6,10 +6,6 @@ import { userApi } from '../services/users';
 
 export function* getUsers() {
   const userList = yield call(userApi.getAllUsers);
-  // const users = userList.reduce(function(acc, cur) {
-  //   acc[cur.id] = cur;
-  //   return acc;
-  // }, {});
 
   yield put({ type: RECEIVE_USERS, payload: userList });
 };

@@ -16,12 +16,12 @@ class UserList extends Component {
     return (
       <div>
         <h3>users</h3>
-        {users && users.foreach(user => {
+        {/* {users && users.foreach(user => {
           console.log('user', user);
           return (
             <UserItem key={user.id} {...{user}} />
           );
-        })}
+        })} */}
       </div>
     )
   }

@@ -10,7 +10,7 @@ function users(state = {}, action) {
     case RECEIVE_USERS:
       return R.merge(state, action.payload);
 
-      default:
+    default:
       return state;
   }
 };
