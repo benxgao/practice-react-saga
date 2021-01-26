@@ -1,3 +1,1 @@
-# practice
-
-Personal practice of JavaScript fullstack development project
+# Boilerplate of React.js application with Redux-saga
