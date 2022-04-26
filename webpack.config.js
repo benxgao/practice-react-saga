@@ -17,7 +17,13 @@ module.exports = {
     publicPath: '/'
   },
   devServer: {
-    contentBase: path.resolve(__dirname, './dist'),
+    static: {
+      directory: path.join(__dirname, 'dist'),
+    },
+    // historyApiFallback: true,
+    // compress: true,
+    // port: 9000,
+    // contentBase: path.resolve(__dirname, './dist'),
   },
   plugins: [
     new CleanWebpackPlugin(),

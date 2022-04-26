@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import R from 'ramda';
 import PropTypes from 'prop-types';
 import UserItem from './UserItem';
 import { loadUserPage } from '../actions';
@@ -23,7 +22,7 @@ class UserList extends Component {
           );
         })} */}
       </div>
-    )
+    );
   }
 }
 
@@ -37,7 +36,7 @@ class UserList extends Component {
 
 const mapStateToProps = state => {
   return ({ users: state.users });
-}
+};
 
 export default connect(
   mapStateToProps,
