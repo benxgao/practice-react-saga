@@ -6,14 +6,17 @@ import {
   Route
 } from 'react-router-dom';
 import { hot } from 'react-hot-loader';
-import history from './history';
+import { createBrowserHistory } from "history";
 import Main from './views/Main';
 
+const browserHistory = createBrowserHistory();
+
 const App = () => (
-  <Router history={history}>
+  <Router history={browserHistory}>
     <Switch>
-      <Route exact path={'/'} component={Main} />
-      <Redirect to={'/'} />
+      <Route exact path={'/'} children={Main} />
+      {/* <Redirect to={'/'} /> */}
+      {/* <Route path="about" render={() => <Redirect to="about-us" />} /> */}
     </Switch>
   </Router>
 );
