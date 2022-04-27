@@ -1,25 +1,19 @@
 import React from 'react';
 import {
-  Router,
-  Switch,
-  Redirect,
+  BrowserRouter,
+  Routes,
   Route
 } from 'react-router-dom';
-import { hot } from 'react-hot-loader';
-import { createBrowserHistory } from "history";
+import { hot } from 'react-hot-loader/root';
 import Main from './views/Main';
 
-const browserHistory = createBrowserHistory();
-
 const App = () => (
-  <Router history={browserHistory}>
-    <Switch>
-      <Route exact path={'/'} children={Main} />
-      {/* <Redirect to={'/'} /> */}
-      {/* <Route path="about" render={() => <Redirect to="about-us" />} /> */}
-    </Switch>
-  </Router>
+  <BrowserRouter>
+    <Routes>
+      <Route path={'/'} element={Main} />
+    </Routes>
+  </BrowserRouter>
 );
 
-export default hot(module)(App);
+export default hot(App);
 
