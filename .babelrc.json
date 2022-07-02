@@ -53,7 +53,6 @@
     },
     "development": {
       "plugins": [
-        "react-hot-loader/babel",
         [
           "ramda",
           {

@@ -4,7 +4,6 @@ import {
   Routes,
   Route
 } from 'react-router-dom';
-// import { hot } from 'react-hot-loader/root';
 import Main from './views/Main';
 
 const App = () => (
@@ -15,5 +14,4 @@ const App = () => (
   </BrowserRouter>
 );
 
-// export default hot(App);
 export default App;
