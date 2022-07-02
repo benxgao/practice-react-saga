@@ -4,16 +4,16 @@ import {
   Routes,
   Route
 } from 'react-router-dom';
-import { hot } from 'react-hot-loader/root';
+// import { hot } from 'react-hot-loader/root';
 import Main from './views/Main';
 
 const App = () => (
   <BrowserRouter>
     <Routes>
-      <Route path={'/'} element={Main} />
+      <Route path='/' element={<Main />} />
     </Routes>
   </BrowserRouter>
 );
 
-export default hot(App);
-
+// export default hot(App);
+export default App;

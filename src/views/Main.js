@@ -1,9 +1,9 @@
 import React from 'react';
 import UserList from './UserList';
 
-const Main = ({}) => (
+const Main = ({ }) => (
   <>
-    <h1>Hello world</h1>
+    <h1>Hello World</h1>
     <UserList />
   </>
 );

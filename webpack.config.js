@@ -11,7 +11,8 @@ module.exports = {
   // entry: {
   //   main: [path.join(__dirname, 'src/index.js')]
   // },
-  entry: ['react-hot-loader/patch', './src'],
+  //entry: ['react-hot-loader/patch', './src'],
+  entry: ['./src'],
 
   output: {
     path: path.resolve(__dirname, './dist'),
