@@ -17,7 +17,7 @@
     "saga",
     "javascript"
   ],
-  "author": "Xingbin Gao <xingbingao@gmail.com> (github.com/benxgao/)",
+  "author": "Xingbin Gao <xingbingao@gmail.com> (https://github.com/benxgao)",
   "license": "MIT",
   "scripts": {
     "start": "webpack serve --mode development",
